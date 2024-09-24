@@ -95,3 +95,46 @@ body {
     color: var(--texto-secundario);
     background: rgb(42,50,121);background: linear-gradient(0deg, rgba(42,50,121,1) 0%, rgba(78,93,223,1) 61%, rgba(78,93,223,1) 100%);
 }
+
+.container__historia {
+    display: flex;
+    padding: 56px;   
+}
+
+.conteudo__texto__container {
+    text-align: start;
+    margin-left: 30px;
+}
+
+.conteudo__titulo {
+    font-size: 48px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+}
+
+.conteudo__texto {
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+}
+
+.historia__botao {
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    background-color: #000;
+    color: var(--texto-secundario);
+    cursor: pointer;
+}
+
+.container__historia__botao {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.historia__botao__texto {
+    font-size: 20px;
+    font-weight: 500;
+}
