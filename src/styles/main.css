@@ -142,7 +142,8 @@ body {
 
 .conteudo__info__container {
     display: flex;
-    justify-content:space-evenly;
+    justify-content:center;
+    gap: 150px;
     align-items: center;
     background-color: var(--bg-secundaria);
     padding: 40px;
@@ -158,4 +159,53 @@ body {
     font-size: 36px;
     font-weight: 100;
     width: 300px;
+}
+
+.equipe__item img {
+    width: 155px;
+    height: 155px;
+}
+
+.equipe__lista__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    list-style-type: none;
+}
+
+.equipe__titulo {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 32px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.projeto__lista {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    gap: 90px;
+}
+
+.bg__projetos__container {
+    background-color: var(--bg-secundaria);
+    padding: 20px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.projetos__titulo {
+    font-size: 48px;
+    font-weight: 900;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 30px;
+}
+
+.projetos__subtitulo {
+    font-size: 48px;
+    font-weight: 200;
+    font-family: 'Inter', sans-serif;
+    margin: 20px;
 }
