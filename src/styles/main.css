@@ -78,7 +78,7 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background: url("/src/imgs/fundo_imdaz.png") no-repeat; 
+    background: url("../imgs/fundo_imdaz.png") no-repeat; 
     background-size: cover;
     height: 91vh;
     color: var(--texto-secundario);
