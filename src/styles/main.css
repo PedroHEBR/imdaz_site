@@ -209,3 +209,19 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 20px;
 }
+
+.parceiros__lista {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    gap: 60px;
+    margin-bottom: 150px;
+}
+
+.parceiros__titulo__container {
+    text-align: center;
+    margin: 50px 0;
+    font-size: 28px;
+    font-weight: 900;
+    font-family: 'Inter', sans-serif;
+}
