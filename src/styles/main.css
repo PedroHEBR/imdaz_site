@@ -53,6 +53,10 @@ body {
     list-style-type: none;
 }
 
+.nav__item:hover a{
+    color: var(--texto-secundario);
+}
+
 .nav__item a {
     text-decoration: none;
     color: var(--texto-principal);
@@ -224,4 +228,45 @@ body {
     font-size: 28px;
     font-weight: 900;
     font-family: 'Inter', sans-serif;
+}
+
+.footer__container {
+    background-color: var(--cor-principal);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+.footer__lista {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style-type: none;
+}
+
+.footer__doc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    gap: 20px;
+}
+
+.footer__doc a{
+    text-decoration: none;
+    color: var(--texto-principal);
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer__contatos__texto {
+    font-size: 24px;
+    font-weight: 300;
+    font-family: 'Inter', sans-serif;
+}
+
+.contato__item img{
+    width: 55px;
+    height: 55px;
 }
