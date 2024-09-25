@@ -27,12 +27,17 @@ body {
 }
 
 .nav__container {
-    display: flex;
     background-color: var(--cor-principal);
+}
+
+.nav__conteudo__container {
+    display: flex;
     width: 100%;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .font__serrat {
@@ -240,10 +245,15 @@ body {
 
 .footer__container {
     background-color: var(--cor-principal);
+}
+
+.footer__conteudo__container {
     display: flex;
     justify-content: space-between;
     padding: 10px;
     align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .footer__lista {
