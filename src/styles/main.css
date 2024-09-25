@@ -16,6 +16,11 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+.conteudo__limite {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
 .nav__logo {
     width: 105px;
     height: 87px;
@@ -172,6 +177,7 @@ body {
 
 .equipe__lista__container {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 50px;
@@ -188,6 +194,7 @@ body {
 
 .projeto__lista {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     list-style-type: none;
     gap: 90px;
@@ -216,6 +223,7 @@ body {
 
 .parceiros__lista {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     list-style-type: none;
     gap: 60px;
@@ -267,6 +275,7 @@ body {
 }
 
 .contato__item img{
-    width: 55px;
-    height: 55px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
 }

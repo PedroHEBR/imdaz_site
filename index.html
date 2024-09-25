@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/responsividade.css">
     <title>IMDAZ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,6 +44,7 @@
                 </li>
             </ul>
         </nav>
+        
         <header class="header__container">
             <h1 class="header__titulo">A EDUCAÇÃO QUE TRANSFORMA VIDAS</h1>
             <h3 class="header__subtitulo">Educando crianças em situação de vulnerabilidade desde 1942</h3>
@@ -51,15 +53,15 @@
     </section>
     
     <section class="conteudo__historia__container">
-        <div class="container__historia">
+        <div class="container__historia conteudo__limite">
             <img src="/src/imgs/imdaz_historia.png" alt="Foto legal" class="conteudo__fotohistorica">
-                <div class="conteudo__texto__container">
-                    <h1 class="conteudo__titulo">Nossa história:</h1>
-                    <p class="conteudo__texto">Em 3 de julho de 1924, nascia a Associação Protetora de Meninos Desvalidos, denominação esta substituída por Asilo de Meninos Desvalidos de Pelotas no ano de 1925, quando foi conferida personalidade jurídica a entidade assistencial. Fundada por Dom Joaquim Ferreira de Mello, então Bispo de Pelotas, a instituição foi mantida pela diocese, e funcionou, como externato, em prédio situado na rua Almirante Barroso, ao lado da Igreja Sagrado Coração de Jesus, anexa ao Asilo, criada pelo mesmo citado titular da diocese, ministrava ensino gratuito para os meninos desvalidos. Mantinha-se com subvenções governamentais, legados, donativos e esmolas.</p>
-                    <div class="container__historia__botao">
-                        <button class="historia__botao"><span class="historia__botao__texto">SABER MAIS</span></button>
-                    </div>
+            <div class="conteudo__texto__container">
+                <h1 class="conteudo__titulo">Nossa história:</h1>
+                <p class="conteudo__texto">Em 3 de julho de 1924, nascia a Associação Protetora de Meninos Desvalidos, denominação esta substituída por Asilo de Meninos Desvalidos de Pelotas no ano de 1925, quando foi conferida personalidade jurídica a entidade assistencial. Fundada por Dom Joaquim Ferreira de Mello, então Bispo de Pelotas, a instituição foi mantida pela diocese, e funcionou, como externato, em prédio situado na rua Almirante Barroso, ao lado da Igreja Sagrado Coração de Jesus, anexa ao Asilo, criada pelo mesmo citado titular da diocese, ministrava ensino gratuito para os meninos desvalidos. Mantinha-se com subvenções governamentais, legados, donativos e esmolas.</p>
+                <div class="container__historia__botao">
+                    <button class="historia__botao"><span class="historia__botao__texto">SABER MAIS</span></button>
                 </div>
+            </div>
         </div>
         
         <div class="conteudo__info__container">
@@ -150,7 +152,6 @@
             </ul>
         </div>
     </section>
-
     <footer class="footer__container">
         <div class="footer__doc">
             <a href="#">Política de Privacidade</a>   
@@ -162,16 +163,24 @@
         <ul class="footer__lista">
             <span class="footer__contatos__texto">Contatos:</span>
             <li class="contato__item">
-                <img src="src/imgs/footer_gmail.png" alt="Ícone do Gmail">
+                <a href="#" class="contato__link">
+                    <img src="src/imgs/footer_gmail.png" alt="Ícone do Gmail">
+                </a>
             </li>
             <li class="contato__item">
-                <img src="src/imgs/footer_facebook.png" alt="Ícone do Facebook">
+                <a href="#" class="contato__link">
+                    <img src="src/imgs/footer_facebook.png" alt="Ícone do Facebook">
+                </a>
             </li>
             <li class="contato__item">
-                <img src="src/imgs/footer_whatsapp.png" alt="Ícone do Whatsapp">
+                <a href="#" class="contato__link">
+                    <img src="src/imgs/footer_whatsapp.png" alt="Ícone do Whatsapp">
+                </a>
             </li>
             <li class="contato__item">
-                <img src="src/imgs/footer_instagram.png" alt="Ícone do Instagram">
+                <a href="#" class="contato__link">
+                    <img src="src/imgs/footer_instagram.png" alt="Ícone do Instagram">
+                </a>
             </li>
         </ul>
     </footer>

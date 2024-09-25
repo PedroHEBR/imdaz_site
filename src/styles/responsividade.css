@@ -1,0 +1,32 @@
+@media screen and (max-width:1270px) {
+    .projeto__item img{
+        max-width: 300px;
+    }
+
+    .projeto__lista {
+        gap: 30px;
+    }
+
+    .info__item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .nav__span {
+        display: none;
+    }
+
+    .nav__lista__container {
+        gap: 20px;
+    }
+
+    .conteudo__texto {
+        font-size: 16px;
+    }
+
+    .conteudo__fotohistorica {
+        max-width: 420px;
+    }
+}
