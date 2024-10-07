@@ -8,7 +8,8 @@
     <title>IMDAZ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <section class="main__nav">
@@ -41,8 +42,14 @@
                         <a href="#">BLOG</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#">ENTRAR</a>
+                        <a href="#" id="entrarButton">ENTRAR</a>
                     </li>
+                    <li class="nav__item nav__search">
+                        <div class="search__container">
+                            <input type="text" id="searchInput" placeholder="Pesquisar...">
+                            <img src="src/imgs/search.png" alt="Ícone de pesquisa" class="search__icon">
+                        </div>
+                    </li>                                       
                 </ul>
             </div>
         </nav>
@@ -50,13 +57,13 @@
         <header class="header__container">
             <h1 class="header__titulo">A EDUCAÇÃO QUE TRANSFORMA VIDAS</h1>
             <h3 class="header__subtitulo">Educando crianças em situação de vulnerabilidade desde 1942</h3>
-            <button class="header__botao"><span>DOAR</span></button>
+            <button class="header__botao" id="doarButton"><span>DOAR</span></button>
         </header>
     </section>
     
     <section class="conteudo__historia__container">
         <div class="container__historia conteudo__limite">
-            <img src="src/imgs/imdaz_historia.png" alt="Foto legal" class="conteudo__fotohistorica">
+            <img src="src/imgs/imdaz_historia.png" alt="Foto histórica do IMDAZ" class="conteudo__fotohistorica">
             <div class="conteudo__texto__container">
                 <h1 class="conteudo__titulo">Nossa história:</h1>
                 <p class="conteudo__texto">Em 3 de julho de 1924, nascia a Associação Protetora de Meninos Desvalidos, denominação esta substituída por Asilo de Meninos Desvalidos de Pelotas no ano de 1925, quando foi conferida personalidade jurídica a entidade assistencial. Fundada por Dom Joaquim Ferreira de Mello, então Bispo de Pelotas, a instituição foi mantida pela diocese, e funcionou, como externato, em prédio situado na rua Almirante Barroso, ao lado da Igreja Sagrado Coração de Jesus, anexa ao Asilo, criada pelo mesmo citado titular da diocese, ministrava ensino gratuito para os meninos desvalidos. Mantinha-se com subvenções governamentais, legados, donativos e esmolas.</p>
@@ -105,26 +112,31 @@
     </section>
 
     <section class="conteudo__projetos__container">
-
         <div class="bg__projetos__container">
             <div class="projeto__titulo__container">
                 <h1 class="projetos__titulo">Projetos:</h1>
             </div>
             
-            <ul class="projeto__lista">
-                <li class="projeto__item">
+            <div class="slider">
+                <div class="slide_container">
+                    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                    <button class="next" onclick="moveSlide(1)">&#10095;</button>    
+                </div>
+                <div class="slide active" id="musica">
                     <h3 class="projetos__subtitulo">Música</h3>
                     <img src="src/imgs/projeto_musica.png" alt="Alunos em aula de música">
-                </li>
-                <li class="projeto__item">
+                </div>
+                <div class="slide" id="taekwondo">
                     <h3 class="projetos__subtitulo">Taekwondo</h3>
                     <img src="src/imgs/projeto_taekwondo.png" alt="Alunos em aula de taekwondo">
-                </li>
-                <li class="projeto__item">
+                </div>
+                <div class="slide" id="danca">
                     <h3 class="projetos__subtitulo">Dança</h3>
                     <img src="src/imgs/projeto_danca.png" alt="Alunos em aula de dança">
-                </li>
-            </ul>
+                </div>
+                
+            </div>
+            
         </div>
 
         <div class="parceiros">
@@ -189,5 +201,173 @@
             </ul>
         </div>
     </footer>
+
+<!-- Modal de Login/Cadastro -->
+<div id="loginModal" class="modal">
+    <div class="modal__conteudo"> <!-- Atualizado para corresponder ao CSS -->
+        <span class="close" id="closeLoginModal">&times;</span>
+        <h2>Login/Cadastro</h2>
+        <form class="modal__form"> <!-- Classe para estilização -->
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+
+            <button type="submit">Entrar</button>
+            <button type="button" id="cadastrarButton">Cadastrar-se</button>
+        </form>
+    </div>
+</div>
+
+
+<!-- Modal de Doação -->
+<div id="doacaoModal" class="modal">
+    <div class="modal__conteudo">
+        <span class="close" id="closeDoacaoModal">&times;</span>
+        <h2>Escolha o valor da doação</h2>
+        <form class="modal__form">
+            <div class="modal__doacao__opcoes">
+                <label for="doacao5">
+                    R$5
+                    <input type="radio" id="doacao5" name="doacao" value="5">
+                </label>
+                <label for="doacao10">
+                    R$10
+                    <input type="radio" id="doacao10" name="doacao" value="10">
+                </label>
+                <label for="doacao25">
+                    R$25
+                    <input type="radio" id="doacao25" name="doacao" value="25">
+                </label>
+                <label for="doacao50">
+                    R$50
+                    <input type="radio" id="doacao50" name="doacao" value="50">
+                </label>
+                <label for="doacaoOutro">
+                    Outro valor:
+                    <input type="radio" id="doacaoOutro" name="doacao" value="outro">
+                    <input type="text" id="outroValor" name="outroValor" placeholder="Digite outro valor">
+                </label>
+            </div>
+
+            <h3>Forma de Pagamento</h3>
+            <div class="modal__pagamento">
+                <label for="pagamentoPix">
+                    Pix
+                    <input type="radio" id="pagamentoPix" name="pagamento" value="pix">
+                </label>
+                <label for="pagamentoCartao">
+                    Cartão de Crédito/Débito
+                    <input type="radio" id="pagamentoCartao" name="pagamento" value="cartao">
+                </label>
+                <label for="pagamentoBoleto">
+                    Boleto
+                    <input type="radio" id="pagamentoBoleto" name="pagamento" value="boleto">
+                </label>
+            </div>
+
+            <!-- Botão de envio -->
+            <button type="submit">Confirmar Doação</button>
+        </form>
+    </div>
+</div>
+
+
+    <script>
+        // Abre e fecha o modal de Login/Cadastro
+        var loginModal = document.getElementById("loginModal");
+        var loginButton = document.getElementById("entrarButton");
+        var closeLoginModal = document.getElementById("closeLoginModal");
+
+        loginButton.onclick = function() {
+            loginModal.style.display = "block";
+        }
+
+        closeLoginModal.onclick = function() {
+            loginModal.style.display = "none";
+        }
+
+        // Abre e fecha o modal de Doação
+        var doacaoModal = document.getElementById("doacaoModal");
+        var doarButton = document.getElementById("doarButton");
+        var closeDoacaoModal = document.getElementById("closeDoacaoModal");
+
+        doarButton.onclick = function() {
+            doacaoModal.style.display = "block";
+        }
+
+        closeDoacaoModal.onclick = function() {
+            doacaoModal.style.display = "none";
+        }
+
+        // Fecha os modais ao clicar fora deles
+        window.onclick = function(event) {
+            if (event.target == loginModal) {
+                loginModal.style.display = "none";
+            }
+            if (event.target == doacaoModal) {
+                doacaoModal.style.display = "none";
+            }
+        }
+    </script>
+
+    <style>
+        /* Estilos para os modais */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        form input[type="email"],
+        form input[type="password"],
+        form input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        form button {
+            padding: 10px 20px;
+            margin: 10px 5px;
+        }
+    </style>
+    <script src="script.js"></script>
+    <script src="src/scripts/slider.js"></script>
+    <script src="src/scripts/modal.js"></script>
 </body>
 </html>

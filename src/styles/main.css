@@ -46,6 +46,9 @@ body {
 
 .nav__lista__container {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 40px;
 }
 
@@ -71,6 +74,28 @@ body {
     text-decoration: none;
     color: var(--texto-principal);
     font-size: 20px;
+}
+.nav__search {
+    display: flex;
+    align-items: center;
+}
+
+#searchInput {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+#searchButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#searchButton img {
+    width: 20px;
+    height: 20px;
 }
 
 .header__container {
@@ -108,7 +133,8 @@ body {
     font-size: 35px;
     font-weight: 700;
     color: var(--texto-secundario);
-    background: rgb(42,50,121);background: linear-gradient(0deg, rgba(42,50,121,1) 0%, rgba(78,93,223,1) 61%, rgba(78,93,223,1) 100%);
+    background: rgb(42,50,121);
+    background: linear-gradient(0deg, rgba(42,50,121,1) 0%, rgba(78,93,223,1) 61%, rgba(78,93,223,1) 100%);
 }
 
 .container__historia {
@@ -156,7 +182,7 @@ body {
 
 .conteudo__info__container {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     gap: 150px;
     align-items: center;
     background-color: var(--bg-secundaria);
@@ -271,7 +297,7 @@ body {
     gap: 20px;
 }
 
-.footer__doc a{
+.footer__doc a {
     text-decoration: none;
     color: var(--texto-principal);
     font-size: 14px;
@@ -284,8 +310,214 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-.contato__item img{
+.contato__item img {
     width: 35px;
     height: 35px;
     cursor: pointer;
+}
+
+/* Estilos de Modal */
+/* Estilos para os modais */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__conteudo {
+    background-color: white;
+    position: absolute; /* Muda para posição absoluta */
+    left: 50%; /* Centraliza horizontalmente */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translate(-50%, -50%); /* Ajusta para o centro */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; /* Largura em porcentagem para responsividade */
+    max-width: 500px; /* Limita a largura máxima */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* O resto do CSS permanece inalterado */
+
+
+@keyframes modal-entrada {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.modal__close {
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--cor-principal);
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.modal__form input, 
+.modal__form select, 
+.modal__form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.modal__form button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--cor-principal);
+    color: var(--texto-secundario);
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.modal__form button:hover {
+    background-color: #cf6a20;
+}
+
+.modal__conteudo {
+    background-color: white;
+    position: absolute; /* Muda para posição absoluta */
+    left: 50%; /* Centraliza horizontalmente */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translate(-50%, -50%); /* Ajusta para o centro */
+    padding: 15px; /* Reduz o padding */
+    border: 1px solid #888;
+    width: 80%; /* Ajusta a largura para 80% */
+    max-width: 400px; /* Limita a largura máxima a 400px */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* Estilos do modal de doação */
+.modal__doacao__opcoes {
+    display: flex;
+    flex-direction: column; /* Mantém as opções em coluna */
+    gap: 10px; /* Espaçamento entre as opções */
+}
+
+.modal__doacao__opcoes label {
+    display: flex; /* Usar flexbox para alinhamento */
+    flex-direction: column; /* Alinha o texto em cima e o botão embaixo */
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: 500;
+}
+
+.modal__doacao__opcoes input[type="radio"] {
+    margin-top: 5px; /* Adiciona espaço entre o texto e o botão */
+}
+
+/* Mudando o layout para coluna e ajustando o espaçamento para opções de pagamento */
+.modal__pagamento {
+    display: flex;
+    flex-direction: column; /* Coloca as opções de pagamento em coluna */
+    gap: 10px; /* Espaçamento entre as opções de pagamento */
+    margin-top: 15px; /* Reduz a margem superior */
+}
+
+.modal__pagamento label {
+    display: flex; /* Usar flexbox para alinhamento */
+    flex-direction: column; /* Alinha o texto em cima e o botão embaixo */
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+}
+
+.modal__pagamento input[type="radio"] {
+    margin-top: 5px; /* Adiciona espaço entre o texto e o botão */
+}
+/* Container da barra de pesquisa */
+.search__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para o campo de texto */
+#searchInput {
+    width: 200px;
+    padding: 8px 32px 8px 12px; /* Ajusta o padding para dar espaço à lupa */
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* Estilo para o ícone de pesquisa */
+.search__icon {
+    position: absolute;
+    right: 20px; /* Define a posição à direita dentro do input */
+    width: 16px;
+    height: 16px;
+    pointer-events: none; /* Para garantir que o clique vá para o campo de input */
+}
+
+/* Ajuste de responsividade */
+@media screen and (max-width:768px) {
+    #searchInput {
+        width: 150px;
+    }
+}
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Define uma largura máxima para o slider */
+    margin: auto; /* Centraliza o slider na página */
+    overflow: hidden;
+}
+
+.slide {
+    display: none; /* Inicialmente escondido */
+    width: 100%;
+    text-align: center; /* Centraliza o texto */
+}
+
+.slide img {
+    width: 100%; /* Imagem ocupa 100% da largura do slide */
+    height: auto; /* Mantém a proporção */
+    max-height: 500px; /* Define uma altura máxima para as imagens */
+    object-fit: cover; /* Corta a imagem para preencher o espaço sem distorcer */
+}
+
+.slide_container {
+    bottom: 35%;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    z-index: 2;
+    justify-content: space-between;
+}
+
+.prev, .next {
+    cursor: pointer;
+    padding: 50px 10PX;
+    background-color: #31303065;
+    color: #FFF;
+    font-size: 20px;
+    border: none;
 }

@@ -1,19 +1,39 @@
 @media screen and (max-width:1270px) {
-    .projeto__item img{
+    .projeto__item img {
         max-width: 300px;
     }
 
     .projeto__lista {
-        gap: 30px;
+        gap: 20px;
     }
 
     .info__item {
         flex-direction: column;
         text-align: center;
     }
+
+    .conteudo__titulo {
+        font-size: 24px;
+    }
+
+    .info__span {
+        font-size: 18px;
+    }
+
+    .projeto__item h3 {
+        font-size: 20px;
+    }
+
+    .projeto__lista {
+        gap: 20px;
+    }
+
+    .container__historia {
+        padding: 20px;
+    }
 }
 
-@media screen and (max-width:1024px) {
+@media screen and (max-width:1366px) {
     .nav__span {
         display: none;
     }
@@ -28,5 +48,38 @@
 
     .conteudo__fotohistorica {
         max-width: 420px;
+    }
+
+    .equipe__item img,
+    .projeto__item img {
+        max-width: 100%;
+    }
+
+    .conteudo__texto__container, 
+    .conteudo__historia {
+        text-align: center;
+    }
+
+    .projeto__item, 
+    .equipe__item {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .header__titulo {
+        font-size: 24px;
+    }
+
+    .header__subtitulo {
+        font-size: 14px;
+    }
+
+    .header__botao {
+        padding: 8px 12px;
+    }
+
+    .nav__logo__container img {
+        max-width: 150px;
     }
 }
